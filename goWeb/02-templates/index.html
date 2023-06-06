@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INDEX SERVER</title>
+</head>
+<body>
+    <h1>Users</h1>
+
+
+
+
+
+
+
+    <!-- Operadores Logicos -->
+      
+        <!-- not     !
+        and     &&
+        or      ||
+    -->
+    {{if not .Active}}
+        <h2>Not Active</h2>
+    {{else}}
+        <p>Activo</p>
+    {{end}}
+
+    {{if (and .Active .Admin)}}
+    <p>Eres Admin</p>
+    {{end}}
+
+   <!--Operadores condicionales 
+        eq      ==
+        ne      !=
+        lt      <
+        le      <=
+        >       gt
+        >=      ge
+    -->
+    {{if gt .Age 18}}
+        <p>Eres mayor de edad</p>
+    {{else if eq .Age 18}}
+        <p>Tienes 18 años</p>
+    {{else}}
+        <p>Eres menor de edad</p>
+    {{end}} 
+
+    <!-- Bucles -->
+    <h1>Bucles</h1>
+    <ul>
+        {{range .Cursos}}                        
+            <li>{{.Name}}</li>
+        {{end}}
+    </ul>
+
+</body>
+</html>
